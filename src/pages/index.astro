@@ -1,0 +1,144 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+const guestWeddingAlbum = import.meta.env.GUEST_WEDDING_ALBUM;
+const guestWeddingWeekAlbum = import.meta.env.GUEST_WEDDING_WEEK_ALBUM;
+const rootGalleryCode = import.meta.env.ROOT_GALLERY_CODE;
+const rootGallery = import.meta.env.ROOT_GALLERY;
+const rootGalleryMobile = import.meta.env.ROOT_GALLERY_MOBILE;
+const rootBlog = import.meta.env.ROOT_BLOG;
+const heartHappyFilmsGallery = import.meta.env.HEART_HAPPY_FILMS_GALLERY;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION}/>
+		<style>
+			main {
+				width: 960px;
+			}
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 2rem;
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			ul li {
+				width: calc(50% - 1rem);
+				text-align: center;
+			}
+			ul li * {
+				text-decoration: none;
+				transition: 0.2s ease;
+			}
+			ul li:first-child {
+				width: 100%;
+				margin-bottom: 1rem;
+				text-align: center;
+			}
+			ul li:first-child img {
+				width: 100%;
+			}
+			ul li:first-child .title {
+				font-size: 2.369rem;
+			}
+			ul li img {
+				margin-bottom: 0.5rem;
+				border-radius: 12px;
+			}
+			ul li a {
+				display: block;
+			}
+			.title {
+				margin: 0;
+				color: rgb(var(--black));
+				line-height: 1;
+			}
+			.info {
+				margin: 0;
+				color: rgb(var(--gray));
+			}
+			ul li a:hover h4,
+			ul li a:hover .info {
+				color: rgb(var(--accent));
+			}
+			ul a:hover img {
+				box-shadow: var(--box-shadow);
+			}
+			@media (max-width: 720px) {
+				ul {
+					gap: 0.5em;
+				}
+				ul li {
+					width: 100%;
+					text-align: center;
+				}
+				ul li:first-child {
+					margin-bottom: 0;
+				}
+				ul li:first-child .title {
+					font-size: 1.563em;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section>
+				<ul>
+					<li>
+						<a href={rootGallery} target="_blank" rel="noopener noreferrer">
+							<img width={720} height={360} src="/root-photography.jpg" alt="" />
+							<h4 class="title">Root Photography Gallery</h4>
+							<p class="info">Professional photography coverage by Root Photography.</p>
+						</a>
+						<p class="info">Code: {rootGalleryCode}</p>
+					</li>
+					<li>
+						<a href={rootGalleryMobile} target="_blank" rel="noopener noreferrer">
+							<img width={720} height={360} src="/root-photography.jpg" alt="" />
+							<h4 class="title">Root Photography Mobile</h4>
+							<p class="info">Mobile app version of our gallery</p>
+						</a>
+						<p class="info">Code: {rootGalleryCode}</p>
+					</li>
+					<li>
+						<a href={rootBlog} target="_blank" rel="noopener noreferrer">
+							<img width={720} height={360} src="/root-blog.jpg" alt="" />
+							<h4 class="title">Root Photography Blog Post</h4>
+							<p class="info">Blog post from our photographers containing vendor information</p>
+						</a>
+					</li>
+					<li>
+						<a href={guestWeddingAlbum} target="_blank" rel="noopener noreferrer">
+							<img width={720} height={360} src="/guest-photo.jpg" alt="" />
+							<h4 class="title">Guest Album</h4>
+							<p class="info">Please use this album to share any photos and videos you took the day of the wedding</p>
+						</a>
+					</li>
+					<li>
+						<a href={guestWeddingWeekAlbum} target="_blank" rel="noopener noreferrer">
+							<img width={720} height={360} src="/wedding-week.jpg" alt="" />
+							<h4 class="title">Wedding Week Album</h4>
+							<p class="info">Please use this album to share any photos and videos you took while on vacation with us</p>
+						</a>
+					</li>
+					<li>
+						<a href={heartHappyFilmsGallery}>
+							<img width={720} height={360} src="/heart-happy-films.jpg" alt="" />
+							<h4 class="title">Heart Happy Films - Coming Soon</h4>
+							<p class="info">Professional videography coverage by Heart Happy Films</p>
+						</a>
+					</li>
+				</ul>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
