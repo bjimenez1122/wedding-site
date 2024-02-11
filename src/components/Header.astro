@@ -1,6 +1,6 @@
 ---
-import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
+import '@fontsource/alex-brush';
 ---
 
 <header>
@@ -12,13 +12,13 @@ import { SITE_TITLE } from '../consts';
 	header {
 		margin: 0;
 		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		background: var(--navy-blue);
+		box-shadow: 0 5px 20px var(--cinderella-blue);
 	}
 	nav h2 {
 		margin: 0;
-		font-size: 1.6em;
-		padding: .5em 0.5em;
+		font-size: 3em;
+		padding: 0.15em 0.5em;
 	}
 	nav {
 		display: flex;
@@ -26,7 +26,8 @@ import { SITE_TITLE } from '../consts';
 		justify-content: center;
 	}
 	nav a {
-		color: var(--black);
+		color: white;
+		font-family: 'Alex Brush', cursive;
 		text-decoration: none;
 	}
 </style>

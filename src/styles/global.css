@@ -5,15 +5,20 @@
  */
 
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
+	--gray: 81, 101, 147;
 	--gray-light: 229, 233, 240;
 	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
 	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
 		0 16px 32px rgba(var(--gray), 33%);
+
+	--navy-blue: #04042E;
+	--dusty-blue: 140, 157, 173;
+	--accent: #73567D;
+	--lilac: 115, 86, 125;
+	--dusty-blue-gradient: rgba(var(--dusty-blue), 20%), rgba(var(--dusty-blue), 10%), rgba(var(--dusty-blue), 5%), rgba(var(--dusty-blue), 5%);
+	--dark-purple: #22102E;
+	--cinderella-blue: #B5D9E8;
+
 }
 @font-face {
 	font-family: 'Atkinson';
@@ -34,11 +39,11 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
+	background: linear-gradient(var(--dusty-blue-gradient)) no-repeat;
+	background-size: 100%;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
+	color: var(--navy-blue);
 	font-size: 20px;
 	line-height: 1.7;
 }
@@ -55,7 +60,7 @@ h4,
 h5,
 h6 {
 	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
+	color: var(--navy-blue);
 	line-height: 1.2;
 }
 h1 {
