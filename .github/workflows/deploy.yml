@@ -24,13 +24,13 @@ jobs:
       - name: Create env file
         run: |
           touch .env
-          echo GUEST_WEDDING_ALBUM=${{ env.GUEST_WEDDING_ALBUM }} >> .env
-          echo GUEST_WEDDING_WEEK_ALBUM=${{ env.GUEST_WEDDING_WEEK_ALBUM }} >> .env
-          echo ROOT_GALLERY_CODE=${{ env.ROOT_GALLERY_CODE }} >> .env
-          echo ROOT_GALLERY=${{ env.ROOT_GALLERY }} >> .env
-          echo ROOT_GALLERY_MOBILE=${{ env.ROOT_GALLERY_MOBILE }} >> .env
-          echo ROOT_BLOG=${{ env.ROOT_BLOG }} >> .env
-          echo HEART_HAPPY_FILMS_GALLERY=${{ env.HEART_HAPPY_FILMS_GALLERY }} >> .env
+          echo GUEST_WEDDING_ALBUM=${{ vars.GUEST_WEDDING_ALBUM }} >> .env
+          echo GUEST_WEDDING_WEEK_ALBUM=${{ vars.GUEST_WEDDING_WEEK_ALBUM }} >> .env
+          echo ROOT_GALLERY_CODE=${{ vars.ROOT_GALLERY_CODE }} >> .env
+          echo ROOT_GALLERY=${{ vars.ROOT_GALLERY }} >> .env
+          echo ROOT_GALLERY_MOBILE=${{ vars.ROOT_GALLERY_MOBILE }} >> .env
+          echo ROOT_BLOG=${{ vars.ROOT_BLOG }} >> .env
+          echo HEART_HAPPY_FILMS_GALLERY=${{ vars.HEART_HAPPY_FILMS_GALLERY }} >> .env
           cat .env
       - name: Install, build, and upload your site
         uses: withastro/action@v1
