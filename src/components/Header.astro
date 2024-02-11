@@ -5,7 +5,9 @@ import '@fontsource/alex-brush';
 
 <header>
 	<nav>
+		<img src="/minnie-castle.svg" alt=""/>
 		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<img src="/mickey-castle.svg" alt="" class="filter-cinderella-blue"/>
 	</nav>
 </header>
 <style>
@@ -15,10 +17,18 @@ import '@fontsource/alex-brush';
 		background: var(--navy-blue);
 		box-shadow: 0 5px 20px var(--cinderella-blue);
 	}
+	.filter-cinderella-blue {
+		filter: invert(100%) sepia(17%) saturate(6722%) hue-rotate(170deg) brightness(99%) contrast(83%);
+	}
+	nav img {
+		height: 3.75em;
+		padding: .5em .5em;
+	}
 	nav h2 {
 		margin: 0;
 		font-size: 3em;
-		padding: 0.15em 0.5em;
+		padding: 0.15em 0.15em;
+		text-align: center;
 	}
 	nav {
 		display: flex;
