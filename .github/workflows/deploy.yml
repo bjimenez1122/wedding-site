@@ -17,6 +17,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: prod
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
@@ -25,6 +26,11 @@ jobs:
           touch .env
           echo GUEST_WEDDING_ALBUM=${{ env.GUEST_WEDDING_ALBUM }} >> .env
           echo GUEST_WEDDING_WEEK_ALBUM=${{ env.GUEST_WEDDING_WEEK_ALBUM }} >> .env
+          echo ROOT_GALLERY_CODE=${{ env.ROOT_GALLERY_CODE }} >> .env
+          echo ROOT_GALLERY=${{ env.ROOT_GALLERY }} >> .env
+          echo ROOT_GALLERY_MOBILE=${{ env.ROOT_GALLERY_MOBILE }} >> .env
+          echo ROOT_BLOG=${{ env.ROOT_BLOG }} >> .env
+          echo HEART_HAPPY_FILMS_GALLERY=${{ env.HEART_HAPPY_FILMS_GALLERY }} >> .env
           cat .env
       - name: Install, build, and upload your site
         uses: withastro/action@v1
